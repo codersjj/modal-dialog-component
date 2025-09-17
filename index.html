@@ -16,7 +16,7 @@
     <!-- Tailwind CDN allows you to use Tailwind classes immediately in your HTML without any installation steps. 
       If you're not using Tailwind, you may delete the <script> -->
     <!-- Get started on Tailwind: https://tailwindcss.com/docs/installation/play-cdn -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <link rel="icon" href="img/favicon.ico" sizes="any" />
     <style>
@@ -25,9 +25,46 @@
   </head>
   <body>
     <!-- Add your site or application content here -->
-    <h1 class="text-5xl text-center font-semibold pt-20">
+    <!-- <h1 class="text-5xl text-center font-semibold pt-20">
       Hello world! Write your content here.
-    </h1>
+    </h1> -->
+    <div class="flex justify-center items-center min-h-screen py-[112px]">
+      <div id="modal" role="dialog" aria-hidden="true" class="fixed inset-0 z-1000 flex justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out" style="display: none;">
+        <div class="modal__overlay absolute inset-0 bg-neutral-950/70"></div>
+        <div role="document" class="relative bg-white rounded-lg w-[343px] p-6 flex flex-col">
+          <header class="flex justify-between items-start gap-2">
+            <h2 id="modalTitle" class="text-lg font-semibold text-neutral-900">Are you sure you want to leave the process?</h2>
+            <button
+              id="closeModal"
+              aria-label="Close modal"
+              class="shrink-0 flex justify-center items-center rounded-sm w-6 h-6 cursor-pointer outline-hidden focus:shadow-[0_0_0_4px_rgba(68,76,231,0.12)]"
+            >
+              <svg
+                width="21"
+                height="20"
+                viewBox="0 0 21 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10.5006 8.82208L14.6253 4.69727L15.8038 5.87577L11.6791 10.0006L15.8038 14.1253L14.6253 15.3038L10.5006 11.1791L6.37577 15.3038L5.19727 14.1253L9.32208 10.0006L5.19727 5.87577L6.37577 4.69727L10.5006 8.82208Z"
+                  fill="#525252" />
+              </svg>
+            </button>
+          </header>
+          <p id="modalBody" class="mt-2 mb-8 text-sm text-neutral-600 font-normal">
+            Your upgrade plan process will be cancelled. You need to start again if you leave the process.
+          </p>
+          <footer class="flex items-center gap-3">
+            <button id="modalCancel" class="flex justify-center items-center border-[0.5px] border-neutral-200 px-[15px] py-[9px] w-full h-[44px] text-base font-medium text-neutral-900 rounded-sm cursor-pointer shadow-[0_1px_3px_rgba(0,0,0,0.1),0_1px_2px_rgba(0,0,0,0.06)] hover:bg-neutral-50 focus:bg-neutral-50 outline-hidden focus:shadow-[0_0_0_4px_rgba(68,76,231,0.12)] disabled:bg-neutral-100 disabled:cursor-not-allowed disabled:text-neutral-400 disabled:shadow-none">
+              No
+            </button>
+            <button id="modalPrimaryAction" class="flex justify-center items-center px-4 py-2.5 w-full h-[44px] text-base font-medium text-white rounded-sm cursor-pointer bg-indigo-700 hover:bg-indigo-800 focus:bg-indigo-800 shadow-[0_1px_3px_rgba(0,0,0,0.1),0_1px_2px_rgba(0,0,0,0.06)] outline-hidden focus:shadow-[0_0_0_4px_rgba(68,76,231,0.12)] disabled:bg-neutral-100 disabled:cursor-not-allowed disabled:text-neutral-400 disabled:shadow-none">
+              Yes
+            </button>
+          </footer>
+        </div>
+      </div>
+    </div>
 
     <!-- Attribute this challenge to yourself! -->
     <div class="credits" data-gfe-screenshot-exclude="true">
@@ -38,9 +75,9 @@
         >GreatFrontEnd Projects</a
       >. Built by
       <a
-        href="https://www.greatfrontend.com/projects/u/username"
+        href="https://www.greatfrontend.com/projects/u/codersjj"
         target="_blank"
-        >Your Name</a
+        >Shane</a
       >.
     </div>
     <script src="js/index.js"></script>
